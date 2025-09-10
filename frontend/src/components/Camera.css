@@ -1,0 +1,269 @@
+/* src/components/Camera.css */
+.camera-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0;
+  padding: 20px;
+}
+
+.camera-section {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.camera-section h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  text-align: center;
+  border: 1px solid #fcc;
+}
+
+.video-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-stream {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  display: block;
+  transform: scaleX(-1);
+}
+
+.camera-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.streaming-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 160px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #1e7e34;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #545b62;
+}
+
+.results-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+}
+
+.results-section h3 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.prediction-result {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.prediction-class {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+
+.class-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #28a745;
+  text-transform: capitalize;
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #28a745;
+}
+
+.confidence-score {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.confidence-bar {
+  position: relative;
+  height: 24px;
+  background: #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #28a745, #20c997);
+  border-radius: 12px;
+  transition: width 0.3s ease;
+}
+
+.confidence-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+
+.confidence-level {
+  text-align: center;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.no-prediction {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #dee2e6;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 768px) {
+  .app-main {
+    padding: 10px;
+  }
+
+  .camera-container {
+    max-width: 100%;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .camera-container {
+    padding: 16px;
+  }
+
+  .camera-section,
+  .results-section {
+    padding: 16px;
+  }
+
+  .btn {
+    min-width: 140px;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .class-name {
+    font-size: 20px;
+  }
+
+  .streaming-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .camera-container {
+    background: #1a1a1a;
+    color: #e9ecef;
+  }
+
+  .camera-section {
+    background: #2d3748;
+  }
+
+  .results-section {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+
+  .camera-section h2,
+  .results-section h3 {
+    color: #e9ecef;
+  }
+
+  .confidence-text {
+    color: #e9ecef;
+  }
+}

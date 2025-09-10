@@ -1,0 +1,19 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+
+# Node.js
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# Model files (terlalu besar)
+backend/models/*.pth
+backend/models/*.pt
+
+# System files
+.DS_Store
+Thumbs.db
+*.log

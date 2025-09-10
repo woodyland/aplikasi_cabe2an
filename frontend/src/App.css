@@ -1,0 +1,252 @@
+/* src/App.css */
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+}
+
+.app-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.app-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.app-header p {
+  margin: 0 0 20px 0;
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 300;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.status-dot.connected {
+  background: #28a745;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
+
+.status-dot.disconnected {
+  background: #dc3545;
+  box-shadow: 0 0 10px rgba(220, 53, 69, 0.5);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.status-text {
+  font-weight: 600;
+  color: #333;
+}
+
+.backend-info {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.model-status.loaded {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.model-status.not-loaded {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.classes-count {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.app-main {
+  padding: 20px;
+  min-height: calc(100vh - 200px);
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+}
+
+.connection-error {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.connection-error h2 {
+  color: #dc3545;
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+}
+
+.connection-error p {
+  color: #666;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.retry-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retry-button:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.app-footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 24px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.tech-info {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+
+.tech-item strong {
+  color: #ffc107;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 768px) {
+  .app-main {
+    padding: 10px;
+  }
+
+  .camera-container {
+    max-width: 100%;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .app-header p {
+    font-size: 1rem;
+  }
+
+  .status-indicator {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .backend-info {
+    justify-content: center;
+  }
+
+  .tech-info {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tech-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .connection-error {
+    margin: 20px;
+    padding: 24px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .status-dot {
+    animation: none;
+  }
+
+  .retry-button:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .app-header {
+    background: white;
+    border-bottom: 3px solid #000;
+  }
+
+  .connection-error {
+    background: white;
+    border: 2px solid #000;
+  }
+}
