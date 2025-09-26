@@ -8,7 +8,7 @@ from PIL import Image
 import io
 import json
 
-# Simple global model
+
 model = None
 
 app = FastAPI()
@@ -82,6 +82,10 @@ async def predict(file: UploadFile = File(...)):
         "prediction": classes[predicted.item()],
         "confidence": float(confidence * 100)
     }
+
+
+# Railway provides PORT environment variable
+port = int(os.getenv("PORT", 8000))
 
 if __name__ == "__main__":
     import uvicorn
