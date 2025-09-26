@@ -1,20 +1,8 @@
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
-websockets==12.0
-python-multipart==0.0.6
-torch>=2.6.0
-torchvision>=0.19.0
-pillow>=10.0.0
-opencv-python>=4.8.0
-numpy>=1.24.0
-pydantic>=2.5.0
-aiofiles>=23.2.1
-
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-torch --index-url https://download.pytorch.org/whl/cpu
-torchvision --index-url https://download.pytorch.org/whl/cpu
-pillow
-opencv-python-headless
-numpy
+torch --index-url https://download.pytorch.org/whl/cpu --find-links https://download.pytorch.org/whl/torch_stable.html
+torchvision --index-url https://download.pytorch.org/whl/cpu --find-links https://download.pytorch.org/whl/torch_stable.html
+opencv-python-headless==4.8.1.78
+pillow==10.0.0
+numpy==1.24.3
 python-multipart
